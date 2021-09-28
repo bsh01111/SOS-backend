@@ -13,7 +13,19 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6b50b222-5580-4155-b136-305409b1b2e0" name="Default Changelist" comment="" />
+    <list default="true" id="6b50b222-5580-4155-b136-305409b1b2e0" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/.name" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/saveactions_settings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sso-api/src/main/kotlin/com/sso/ssoapi/controller/UserController.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sso-api/src/main/kotlin/com/sso/ssoapi/dto/ApiResponse.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sso-api/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/sso-api/build.gradle.kts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sso-api/src/main/kotlin/sso/ssoapi/SsoApiApplication.kt" beforeDir="false" afterPath="$PROJECT_DIR$/sso-api/src/main/kotlin/com/sso/ssoapi/SsoApiApplication.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sso-api/src/test/kotlin/sso/ssoapi/SsoApiApplicationTests.kt" beforeDir="false" afterPath="$PROJECT_DIR$/sso-api/src/test/kotlin/com/sso/ssoapi/SsoApiApplicationTests.kt" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -27,6 +39,9 @@
   <component name="ExternalProjectsManager">
     <system id="GRADLE">
       <state>
+        <task path="$PROJECT_DIR$/sso-api">
+          <activation />
+        </task>
         <projects_view>
           <tree_state>
             <expand>
@@ -34,12 +49,30 @@
                 <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
                 <item name="sso-api" type="f1a62948:ProjectNode" />
               </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="sso-api" type="f1a62948:ProjectNode" />
+                <item name="Tasks" type="e4a08cd1:TasksNode" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="sso-api" type="f1a62948:ProjectNode" />
+                <item name="Tasks" type="e4a08cd1:TasksNode" />
+                <item name="other" type="c8890929:TasksNode$1" />
+              </path>
             </expand>
             <select />
           </tree_state>
         </projects_view>
       </state>
     </system>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Kotlin Class" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -68,6 +101,7 @@
     <property name="RequestMappingsPanelWidth0" value="75" />
     <property name="RequestMappingsPanelWidth1" value="75" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
@@ -75,9 +109,9 @@
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.17" />
     <property name="project.structure.side.proportion" value="0.2" />
-    <property name="settings.editor.selected.configurable" value="android.project.structure" />
+    <property name="settings.editor.selected.configurable" value="reference.settingsdialog.project.gradle" />
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Spring Boot.SsoApiApplication (1)">
     <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
       <option name="arquillianRunConfiguration">
         <value>
@@ -89,6 +123,83 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="SsoApiApplicationTests.contextLoads" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="sso-api.test" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="sso.ssoapi.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="sso.ssoapi" />
+      <option name="MAIN_CLASS_NAME" value="sso.ssoapi.SsoApiApplicationTests" />
+      <option name="METHOD_NAME" value="contextLoads" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Test.test2" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="sso-api.test" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="sso.ssoapi.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="sso.ssoapi" />
+      <option name="MAIN_CLASS_NAME" value="sso.ssoapi.Test" />
+      <option name="METHOD_NAME" value="test2" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Test.test3" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="sso-api.test" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="sso.ssoapi.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="sso.ssoapi" />
+      <option name="MAIN_CLASS_NAME" value="sso.ssoapi.Test" />
+      <option name="METHOD_NAME" value="test3" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Test.test5" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="sso-api.test" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="sso.ssoapi.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="sso.ssoapi" />
+      <option name="MAIN_CLASS_NAME" value="sso.ssoapi.Test" />
+      <option name="METHOD_NAME" value="test5" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="SsoApiApplication (1)" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
+      <module name="sso-api.main" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.sso.ssoapi.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.sso.ssoapi.SsoApiApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="SsoApiApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
       <module name="sso-api.main" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="sso.ssoapi.SsoApiApplication" />
@@ -96,6 +207,15 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Spring Boot.SsoApiApplication (1)" />
+        <item itemvalue="JUnit.SsoApiApplicationTests.contextLoads" />
+        <item itemvalue="JUnit.Test.test5" />
+        <item itemvalue="JUnit.Test.test3" />
+        <item itemvalue="JUnit.Test.test2" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -109,6 +229,11 @@
       <workItem from="1632561309602" duration="320000" />
       <workItem from="1632561699226" duration="146000" />
       <workItem from="1632561899439" duration="1582000" />
+      <workItem from="1632568346141" duration="580000" />
+      <workItem from="1632569279837" duration="1969000" />
+      <workItem from="1632748127712" duration="2365000" />
+      <workItem from="1632836361362" duration="68000" />
+      <workItem from="1632836436687" duration="1393000" />
     </task>
     <servers />
   </component>
@@ -133,46 +258,62 @@
     </state>
     <state x="1888" y="-185" key="#Project_Structure/0.0.1440.900/1440.-275.1920.1080@1440.-275.1920.1080" timestamp="1632561561126" />
     <state x="448" y="107" key="#Project_Structure/0.23.1920.1006@0.23.1920.1006" timestamp="1632555238501" />
-    <state width="1878" height="305" key="GridCell.Tab.0.bottom" timestamp="1632568329465">
+    <state width="1878" height="305" key="GridCell.Tab.0.bottom" timestamp="1632841069538">
       <screen x="1440" y="-275" width="1920" height="1080" />
     </state>
-    <state width="1878" height="305" key="GridCell.Tab.0.bottom/0.0.1440.900/1440.-275.1920.1080@1440.-275.1920.1080" timestamp="1632568329465" />
+    <state width="1878" height="305" key="GridCell.Tab.0.bottom/0.0.1440.900/1440.-275.1920.1080@1440.-275.1920.1080" timestamp="1632841069538" />
     <state width="1878" height="305" key="GridCell.Tab.0.bottom/0.0.1920.1080@0.0.1920.1080" timestamp="1632561263676" />
-    <state width="1878" height="305" key="GridCell.Tab.0.center" timestamp="1632568329462">
+    <state width="1878" height="305" key="GridCell.Tab.0.bottom/0.23.1440.826/1440.-275.1920.1080@1440.-275.1920.1080" timestamp="1632840774283" />
+    <state width="1878" height="305" key="GridCell.Tab.0.bottom/0.23.1440.877/1440.-275.1920.1080@1440.-275.1920.1080" timestamp="1632836355657" />
+    <state width="1878" height="305" key="GridCell.Tab.0.center" timestamp="1632841069537">
       <screen x="1440" y="-275" width="1920" height="1080" />
     </state>
-    <state width="1878" height="305" key="GridCell.Tab.0.center/0.0.1440.900/1440.-275.1920.1080@1440.-275.1920.1080" timestamp="1632568329462" />
+    <state width="1878" height="305" key="GridCell.Tab.0.center/0.0.1440.900/1440.-275.1920.1080@1440.-275.1920.1080" timestamp="1632841069537" />
     <state width="1878" height="305" key="GridCell.Tab.0.center/0.0.1920.1080@0.0.1920.1080" timestamp="1632561263675" />
-    <state width="1878" height="305" key="GridCell.Tab.0.left" timestamp="1632568329461">
+    <state width="1878" height="305" key="GridCell.Tab.0.center/0.23.1440.826/1440.-275.1920.1080@1440.-275.1920.1080" timestamp="1632840774281" />
+    <state width="1878" height="305" key="GridCell.Tab.0.center/0.23.1440.877/1440.-275.1920.1080@1440.-275.1920.1080" timestamp="1632836355656" />
+    <state width="1878" height="305" key="GridCell.Tab.0.left" timestamp="1632841069536">
       <screen x="1440" y="-275" width="1920" height="1080" />
     </state>
-    <state width="1878" height="305" key="GridCell.Tab.0.left/0.0.1440.900/1440.-275.1920.1080@1440.-275.1920.1080" timestamp="1632568329461" />
+    <state width="1878" height="305" key="GridCell.Tab.0.left/0.0.1440.900/1440.-275.1920.1080@1440.-275.1920.1080" timestamp="1632841069536" />
     <state width="1878" height="305" key="GridCell.Tab.0.left/0.0.1920.1080@0.0.1920.1080" timestamp="1632561263675" />
-    <state width="1878" height="305" key="GridCell.Tab.0.right" timestamp="1632568329463">
+    <state width="1878" height="305" key="GridCell.Tab.0.left/0.23.1440.826/1440.-275.1920.1080@1440.-275.1920.1080" timestamp="1632840774280" />
+    <state width="1878" height="305" key="GridCell.Tab.0.left/0.23.1440.877/1440.-275.1920.1080@1440.-275.1920.1080" timestamp="1632836355655" />
+    <state width="1878" height="305" key="GridCell.Tab.0.right" timestamp="1632841069538">
       <screen x="1440" y="-275" width="1920" height="1080" />
     </state>
-    <state width="1878" height="305" key="GridCell.Tab.0.right/0.0.1440.900/1440.-275.1920.1080@1440.-275.1920.1080" timestamp="1632568329463" />
+    <state width="1878" height="305" key="GridCell.Tab.0.right/0.0.1440.900/1440.-275.1920.1080@1440.-275.1920.1080" timestamp="1632841069538" />
     <state width="1878" height="305" key="GridCell.Tab.0.right/0.0.1920.1080@0.0.1920.1080" timestamp="1632561263676" />
-    <state width="1878" height="305" key="GridCell.Tab.1.bottom" timestamp="1632568329475">
+    <state width="1878" height="305" key="GridCell.Tab.0.right/0.23.1440.826/1440.-275.1920.1080@1440.-275.1920.1080" timestamp="1632840774282" />
+    <state width="1878" height="305" key="GridCell.Tab.0.right/0.23.1440.877/1440.-275.1920.1080@1440.-275.1920.1080" timestamp="1632836355657" />
+    <state width="1878" height="305" key="GridCell.Tab.1.bottom" timestamp="1632841069542">
       <screen x="1440" y="-275" width="1920" height="1080" />
     </state>
-    <state width="1878" height="305" key="GridCell.Tab.1.bottom/0.0.1440.900/1440.-275.1920.1080@1440.-275.1920.1080" timestamp="1632568329475" />
-    <state width="1878" height="305" key="GridCell.Tab.1.center" timestamp="1632568329467">
+    <state width="1878" height="305" key="GridCell.Tab.1.bottom/0.0.1440.900/1440.-275.1920.1080@1440.-275.1920.1080" timestamp="1632841069542" />
+    <state width="1878" height="305" key="GridCell.Tab.1.bottom/0.23.1440.826/1440.-275.1920.1080@1440.-275.1920.1080" timestamp="1632840774288" />
+    <state width="1878" height="305" key="GridCell.Tab.1.bottom/0.23.1440.877/1440.-275.1920.1080@1440.-275.1920.1080" timestamp="1632836355660" />
+    <state width="1878" height="305" key="GridCell.Tab.1.center" timestamp="1632841069540">
       <screen x="1440" y="-275" width="1920" height="1080" />
     </state>
-    <state width="1878" height="305" key="GridCell.Tab.1.center/0.0.1440.900/1440.-275.1920.1080@1440.-275.1920.1080" timestamp="1632568329467" />
-    <state width="1878" height="305" key="GridCell.Tab.1.left" timestamp="1632568329466">
+    <state width="1878" height="305" key="GridCell.Tab.1.center/0.0.1440.900/1440.-275.1920.1080@1440.-275.1920.1080" timestamp="1632841069540" />
+    <state width="1878" height="305" key="GridCell.Tab.1.center/0.23.1440.826/1440.-275.1920.1080@1440.-275.1920.1080" timestamp="1632840774284" />
+    <state width="1878" height="305" key="GridCell.Tab.1.center/0.23.1440.877/1440.-275.1920.1080@1440.-275.1920.1080" timestamp="1632836355659" />
+    <state width="1878" height="305" key="GridCell.Tab.1.left" timestamp="1632841069539">
       <screen x="1440" y="-275" width="1920" height="1080" />
     </state>
-    <state width="1878" height="305" key="GridCell.Tab.1.left/0.0.1440.900/1440.-275.1920.1080@1440.-275.1920.1080" timestamp="1632568329466" />
-    <state width="1878" height="305" key="GridCell.Tab.1.right" timestamp="1632568329474">
+    <state width="1878" height="305" key="GridCell.Tab.1.left/0.0.1440.900/1440.-275.1920.1080@1440.-275.1920.1080" timestamp="1632841069539" />
+    <state width="1878" height="305" key="GridCell.Tab.1.left/0.23.1440.826/1440.-275.1920.1080@1440.-275.1920.1080" timestamp="1632840774284" />
+    <state width="1878" height="305" key="GridCell.Tab.1.left/0.23.1440.877/1440.-275.1920.1080@1440.-275.1920.1080" timestamp="1632836355658" />
+    <state width="1878" height="305" key="GridCell.Tab.1.right" timestamp="1632841069541">
       <screen x="1440" y="-275" width="1920" height="1080" />
     </state>
-    <state width="1878" height="305" key="GridCell.Tab.1.right/0.0.1440.900/1440.-275.1920.1080@1440.-275.1920.1080" timestamp="1632568329474" />
-    <state x="1909" y="-96" key="SettingsEditor" timestamp="1632568317619">
+    <state width="1878" height="305" key="GridCell.Tab.1.right/0.0.1440.900/1440.-275.1920.1080@1440.-275.1920.1080" timestamp="1632841069541" />
+    <state width="1878" height="305" key="GridCell.Tab.1.right/0.23.1440.826/1440.-275.1920.1080@1440.-275.1920.1080" timestamp="1632840774285" />
+    <state width="1878" height="305" key="GridCell.Tab.1.right/0.23.1440.877/1440.-275.1920.1080@1440.-275.1920.1080" timestamp="1632836355659" />
+    <state x="1909" y="-96" key="SettingsEditor" timestamp="1632836582364">
       <screen x="1440" y="-275" width="1920" height="1080" />
     </state>
-    <state x="1909" y="-96" key="SettingsEditor/0.0.1440.900/1440.-275.1920.1080@1440.-275.1920.1080" timestamp="1632568317619" />
+    <state x="1909" y="-96" key="SettingsEditor/0.0.1440.900/1440.-275.1920.1080@1440.-275.1920.1080" timestamp="1632836582364" />
     <state x="1909" y="-96" key="SettingsEditor/0.23.1440.877/1440.-275.1920.1080@1440.-275.1920.1080" timestamp="1632561682113" />
   </component>
 </project>
