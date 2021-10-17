@@ -19,15 +19,8 @@
     </select>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6b50b222-5580-4155-b136-305409b1b2e0" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.name" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/jarRepositories.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/saveactions_settings.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" />
+    <list default="true" id="6b50b222-5580-4155-b136-305409b1b2e0" name="Default Changelist" comment="feat: IDE 파일 제거">
+      <change beforePath="$PROJECT_DIR$/sso-api/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/sso-api/.gitignore" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -233,6 +226,14 @@
       <workItem from="1632836436687" duration="1857000" />
       <workItem from="1633941111376" duration="1302000" />
     </task>
+    <task id="LOCAL-00001" summary="feat: IDE 파일 제거">
+      <created>1634474030692</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1634474030692</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -261,6 +262,10 @@
       </map>
     </option>
     <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="feat: IDE 파일 제거" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: IDE 파일 제거" />
   </component>
   <component name="WindowStateProjectService">
     <state x="1888" y="-186" key="#Project_Structure" timestamp="1634471818428">
