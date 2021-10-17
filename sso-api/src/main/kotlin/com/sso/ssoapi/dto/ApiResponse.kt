@@ -1,3 +1,3 @@
 package com.sso.ssoapi.dto
 
-data class ApiResponse(val body: Any)
+data class ApiResponse(val data: Any)
