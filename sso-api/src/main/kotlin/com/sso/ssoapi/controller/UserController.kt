@@ -23,8 +23,8 @@ class UserController(
     @GetMapping("/user")
     private fun getUsers(): ResponseEntity<Any> {
         return ResponseEntity
-                .ok()
-                .body(userService.getAllUsers())
+            .ok()
+            .body(userService.getAllUsers())
     }
 
     @PostMapping("/login")
