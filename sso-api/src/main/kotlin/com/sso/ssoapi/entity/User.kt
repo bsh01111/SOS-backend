@@ -3,40 +3,30 @@ package com.sso.ssoapi.entity
 import java.util.*
 import javax.persistence.Column
 import javax.persistence.Entity
+import javax.persistence.EnumType
+import javax.persistence.Enumerated
+import javax.persistence.GeneratedValue
+import javax.persistence.GenerationType
 import javax.persistence.Id
 import javax.persistence.Table
+import org.springframework.format.annotation.DateTimeFormat
 
 @Entity
-@Table(name = "user")
+@Table(name = "user", schema = "sos")
 data class User(
+    @Column(nullable = false) val email: String,
+    @Column(nullable = false) val password: String,
+    @Column(nullable = false) val name: String,
+    @Column(nullable = false) val nickname: String,
+    @Column(nullable = false) @DateTimeFormat(pattern = "yyyy-MM-dd") val birthday: Date,
+    @Column(nullable = false) @Enumerated(EnumType.STRING) val sex: Sex,
+    @Column(nullable = false) val phoneNumber: String,
+) {
     @Id
-    @Column(name = "id")
-    val id: Int,
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    val id: Int? = null
+}
 
-    @Column(name = "email")
-    val email: String,
-
-    @Column(name = "password")
-    val password: String,
-
-    @Column(name = "name")
-    val name: String,
-
-    @Column(name = "tel_number")
-    val telNumber: String,
-
-    @Column(name = "nickname")
-    val nickname: String,
-
-    @Column(name = "date_of_birth")
-    val dateOfBirth: Date,
-
-    @Column(name = "profile_id")
-    val profileId: Int,
-
-    @Column(name = "created_at")
-    val createdAt: Date,
-
-    @Column(name = "updated_at")
-    val updatedAt: Date
-)
+enum class Sex {
+    MAN, WOMAN, NONE
+}
