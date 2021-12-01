@@ -13,4 +13,9 @@ class SosService(
     fun findSosList(): List<SosDetail> {
         return sosQueryDslRepository.findSosList()
     }
+
+    @Transactional(readOnly = true)
+    fun findSosDetail(SosId: Long): SosDetail? {
+        return sosQueryDslRepository.findSosDetail(SosId)
+    }
 }

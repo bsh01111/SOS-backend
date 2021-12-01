@@ -4,6 +4,7 @@ import com.querydsl.core.annotations.QueryProjection
 
 data class SosDetail @QueryProjection constructor(
     val id: Long,
+    val mainProfileUrl: String?,
     val content: String,
     val location: String,
     val cost: Long,
