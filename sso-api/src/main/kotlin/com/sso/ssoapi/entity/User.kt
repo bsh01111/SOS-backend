@@ -24,7 +24,7 @@ data class User(
 ) {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    val id: Int? = null
+    val id: Long? = null
 }
 
 enum class Sex {
