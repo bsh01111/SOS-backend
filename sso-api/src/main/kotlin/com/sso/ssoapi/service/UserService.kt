@@ -3,6 +3,7 @@ package com.sso.ssoapi.service
 import com.sso.ssoapi.controller.dto.user.UserSignUpRequest
 import com.sso.ssoapi.entity.User
 import com.sso.ssoapi.repository.UserRepository
+import com.sso.ssoapi.repository.UserQueryDslRepository
 import org.springframework.http.HttpStatus
 import org.springframework.stereotype.Service
 import org.springframework.transaction.annotation.Transactional
@@ -11,6 +12,7 @@ import org.springframework.web.server.ResponseStatusException
 @Service
 class UserService(
     private val userRepository: UserRepository
+    private val userQueryDslRepository: UserQueryDslRepository
 ) {
     @Transactional(readOnly = true)
     fun login(email: String, password: String): User? {
@@ -34,5 +36,10 @@ class UserService(
             userSignUpRequest.phoneNumber,
         )
         return userRepository.save(user)
+    }
+
+    @Transactional(readOnly = true)
+    fun findUserList(): List<UserDetail> {
+        return userQueryDslRepository.findUserList()
     }
 }

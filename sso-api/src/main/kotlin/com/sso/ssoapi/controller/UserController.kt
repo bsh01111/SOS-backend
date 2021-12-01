@@ -27,4 +27,10 @@ class UserController(
         val user = userService.signUp(body)
         return ApiResponse(UserSignUpResponse(user))
     }
+
+    @GetMapping("/list")
+    fun getUserList(): ApiResponse {
+        val userList = userService.findUserList()
+        return ApiResponse(UserListResponse(userList))
+    }
 }

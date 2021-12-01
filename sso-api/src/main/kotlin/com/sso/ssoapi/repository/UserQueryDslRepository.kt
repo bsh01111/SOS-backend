@@ -3,6 +3,8 @@ package com.sso.ssoapi.repository
 import com.querydsl.jpa.impl.JPAQueryFactory
 import com.sso.ssoapi.entity.QUser.user
 import com.sso.ssoapi.entity.User
+import com.sso.ssoapi.dto.QUserDetail
+import com.sso.ssoapi.dto.UserDetail
 import org.springframework.stereotype.Repository
 
 @Repository
@@ -13,4 +15,11 @@ class UserQueryDslRepository(
         return jpaQueryFactory.select(user).fetch()
     }
 
+    fun findUserList(): List<UserDetail> {
+        return jpaQueryFactory.select(
+            QuserDetail(
+                id, email, name, phoneNumber, nickName, birthDay
+            )
+        ).fetch()
+    }
 }
