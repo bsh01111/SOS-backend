@@ -9,4 +9,5 @@ data class UserDetail @QueryProjection constructor(
     val phoneNumber: String,
     val nickName: String,
     val birthDay: Date,
+    val userProfileUrl: String,
 )
