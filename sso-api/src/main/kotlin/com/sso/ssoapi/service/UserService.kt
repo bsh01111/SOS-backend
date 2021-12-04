@@ -40,7 +40,7 @@ class UserService(
     }
 
     @Transactional(readOnly = true)
-    fun findUserList(): List<UserDetail> {
-        return userQueryDslRepository.findUserList()
+    fun findUserList(userId: Long): List<UserDetail> {
+        return userQueryDslRepository.findUserList(userId)
     }
 }

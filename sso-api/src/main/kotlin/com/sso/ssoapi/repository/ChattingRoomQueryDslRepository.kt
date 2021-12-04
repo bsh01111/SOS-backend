@@ -13,17 +13,20 @@ import org.springframework.stereotype.Repository
 class ChattingRoomQueryDslRepository(
     val jpaQueryFactory: JPAQueryFactory
 ) {
-    fun findChattingRoomList(): List<ChattingRoomDetail> {
+    fun findChattingRoomListById(UserId: Long): List<ChattingRoomDetail> {
         return jpaQueryFactory.selectFrom(chattingRoom)
             .innerJoin(user).on(user.id.eq(chattingRoom.userId))
             .leftJoin(profile).on(chattingRoom.userId.eq(profile.userId).and(profile.category.eq(Category.PROFILE)))
             .select(
                 QChattingRoomDetail(
                     chattingRoom.id,
+                    chattingRoom.userId,
+                    chattingRoom.guestId,
                     user.nickname,
                     profile.url,
                 )
             )
+            .where(chattingRoom.userId.eq(UserId))
             .fetch()
     }
 }

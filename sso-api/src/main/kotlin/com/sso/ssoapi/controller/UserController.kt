@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.GetMapping
 import org.springframework.web.bind.annotation.RequestBody
 import org.springframework.web.bind.annotation.RequestMapping
 import org.springframework.web.bind.annotation.RestController
+import org.springframework.web.bind.annotation.RequestParam
 
 @RestController
 @RequestMapping("/user")
@@ -31,8 +32,8 @@ class UserController(
     }
 
     @GetMapping("/list")
-    fun getUserList(): ApiResponse {
-        val userList = userService.findUserList()
+    fun getUserList(@RequestParam id: Long): ApiResponse {
+        val userList = userService.findUserList(id)
         return ApiResponse(UserListResponse(userList))
     }
 }

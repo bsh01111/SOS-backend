@@ -16,15 +16,16 @@ class UserQueryDslRepository(
         return jpaQueryFactory.select(user).fetch()
     }
 
-    fun findUserList(): List<UserDetail> {
+    fun findUserList(UserId: Long): List<UserDetail> {
         return jpaQueryFactory.selectFrom(user)
             .innerJoin(profile).on(user.id.eq(profile.userId))
             .select(
-            QUserDetail(
-                user.id,
-                user.nickname,
-                profile.url,
+                QUserDetail(
+                    user.id,
+                    user.nickname,
+                    profile.url,
+                )
             )
-        ).fetch()
+            .where(user.id.ne(UserId)).fetch()
     }
 }

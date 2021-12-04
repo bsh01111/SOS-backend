@@ -11,6 +11,7 @@ import javax.persistence.Table
 @Table(name = "chattingroom", schema = "sos")
 data class ChattingRoom(
     @Column(nullable = false) val userId: Long,
+    @Column(nullable = false) val guestId: Long,
 ) {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
