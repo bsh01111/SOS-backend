@@ -3,7 +3,6 @@ package com.sso.ssoapi.repository
 import com.querydsl.jpa.impl.JPAQueryFactory
 import com.sso.ssoapi.entity.QUser.user
 import com.sso.ssoapi.entity.User
-import com.sso.ssoapi.entity.Category
 import com.sso.ssoapi.entity.QProfile.profile
 import com.sso.ssoapi.dto.QUserDetail
 import com.sso.ssoapi.dto.UserDetail
@@ -18,16 +17,12 @@ class UserQueryDslRepository(
     }
 
     fun findUserList(): List<UserDetail> {
-        return jpaQueryFactory.selectfrom(user)
-            .innerjoin(profile).on(user.id.eq(profile.userId))
+        return jpaQueryFactory.selectFrom(user)
+            .innerJoin(profile).on(user.id.eq(profile.userId))
             .select(
-            QuserDetail(
+            QUserDetail(
                 user.id,
-                user.email,
-                user.name,
-                user.phoneNumber,
-                user.nickName,
-                user.birthDay,
+                user.nickname,
                 profile.url,
             )
         ).fetch()

@@ -4,6 +4,7 @@ import com.sso.ssoapi.controller.dto.user.UserLoginRequest
 import com.sso.ssoapi.controller.dto.user.UserLoginResponse
 import com.sso.ssoapi.controller.dto.user.UserSignUpRequest
 import com.sso.ssoapi.controller.dto.user.UserSignUpResponse
+import com.sso.ssoapi.controller.dto.user.UserListResponse
 import com.sso.ssoapi.dto.ApiResponse
 import com.sso.ssoapi.service.UserService
 import org.springframework.web.bind.annotation.PostMapping

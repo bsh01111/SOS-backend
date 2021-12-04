@@ -12,7 +12,7 @@ import com.sso.ssoapi.dto.UserDetail
 
 @Service
 class UserService(
-    private val userRepository: UserRepository
+    private val userRepository: UserRepository,
     private val userQueryDslRepository: UserQueryDslRepository
 ) {
     @Transactional(readOnly = true)

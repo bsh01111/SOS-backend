@@ -13,7 +13,7 @@ class ChattingRoomService(
     private val chattingRoomQueryDslRepository: ChattingRoomQueryDslRepository
 ) {
     @Transactional(readOnly = true)
-    fun findSosList(): List<ChattingRoomDetail> {
+    fun findChattingRoomList(): List<ChattingRoomDetail> {
         return chattingRoomQueryDslRepository.findChattingRoomList()
     }
 }
