@@ -33,7 +33,7 @@ class SosQueryDslRepository(
             .fetch()
     }
 
-    fun findSosDetail(SosId: Long): SosDetail? {
+    fun findSosDetail(sosId: Long): SosDetail? {
         return jpaQueryFactory.selectFrom(sos)
             .innerJoin(user).on(user.id.eq(sos.userId))
             .leftJoin(profile).on(sos.userId.eq(profile.userId).and(profile.category.eq(Category.PROFILE)))
@@ -49,7 +49,7 @@ class SosQueryDslRepository(
                     user.nickname
                 )
             )
-            .where(sos.id.eq(SosId))
+            .where(sos.id.eq(sosId))
             .fetchFirst()
     }
 }
