@@ -1,6 +1,7 @@
 package com.sso.ssoapi.repository
 
 import com.querydsl.jpa.impl.JPAQueryFactory
+import com.sso.ssoapi.controller.dto.profile.ProfileUpdateRequest
 import com.sso.ssoapi.dto.QProfileDetail
 import com.sso.ssoapi.dto.ProfileDetail
 import com.sso.ssoapi.dto.QPostDetail
@@ -41,5 +42,18 @@ class ProfileQueryDslRepository(
             )
             .where(post.userId.eq(UserId))
             .fetch()
+    }
+
+    fun updateProfile(profileUpdateRequest: ProfileUpdateRequest, UserId: Long): Long? {
+        return jpaQueryFactory.update(profile)
+                .set(profile.career, profileUpdateRequest.career)
+                .set(profile.elementrySchool, profileUpdateRequest.elementrySchool)
+                .set(profile.middleSchool, profileUpdateRequest.middleSchool)
+                .set(profile.highSchool, profileUpdateRequest.highSchool)
+                .set(profile.university, profileUpdateRequest.university)
+                .set(profile.originPlace, profileUpdateRequest.originPlace)
+                .set(profile.residence, profileUpdateRequest.residence)
+                .where(profile.userId.eq(UserId))
+                .execute()
     }
 }

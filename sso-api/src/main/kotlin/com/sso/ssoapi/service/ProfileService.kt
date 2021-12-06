@@ -1,6 +1,7 @@
 package com.sso.ssoapi.service
 
 import com.sso.ssoapi.controller.dto.profile.PostEnrollRequest
+import com.sso.ssoapi.controller.dto.profile.ProfileUpdateRequest
 import org.springframework.stereotype.Service
 import com.sso.ssoapi.dto.ProfileDetail
 import com.sso.ssoapi.dto.PostDetail
@@ -12,7 +13,7 @@ import org.springframework.transaction.annotation.Transactional
 @Service
 class ProfileService (
     private val postRepository: PostRepository,
-    private val profileQueryDslRepository: ProfileQueryDslRepository
+    private val profileQueryDslRepository: ProfileQueryDslRepository,
     ) {
 
     @Transactional(readOnly = true)
@@ -33,5 +34,10 @@ class ProfileService (
             postEnrollRequest.imageUrl,
         )
         return postRepository.save(post)
+    }
+
+    @Transactional
+    fun updateProfile(profileUpdateRequest: ProfileUpdateRequest, id: Long): Long? {
+        return profileQueryDslRepository.updateProfile(profileUpdateRequest, id)
     }
 }
