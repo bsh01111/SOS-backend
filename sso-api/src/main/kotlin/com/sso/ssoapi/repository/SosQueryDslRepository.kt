@@ -1,6 +1,8 @@
 package com.sso.ssoapi.repository
 
 import com.querydsl.jpa.impl.JPAQueryFactory
+import com.sso.ssoapi.dto.QApplyDetail
+import com.sso.ssoapi.dto.ApplyDetail
 import com.sso.ssoapi.dto.QSosDetail
 import com.sso.ssoapi.dto.SosDetail
 import com.sso.ssoapi.dto.QSosUserApplyDetail
@@ -82,6 +84,22 @@ class SosQueryDslRepository(
             .fetchFirst()
     }
 
+    fun findApplyListBySosId(SosId: Long): List<ApplyDetail> {
+        return jpaQueryFactory.selectFrom(user)
+            .innerJoin(sosUserApply).on(sosUserApply.userId.eq(user.id))
+            .leftJoin(profile).on(profile.userId.eq(sosUserApply.userId).and(profile.category.eq(Category.PROFILE)))
+            .select(
+                QApplyDetail(
+                    user.id,
+                    user.nickname,
+                    profile.url,
+                    sosUserApply.status,
+                )
+            )
+            .where(sosUserApply.sosId.eq(SosId))
+            .fetch()
+    }
+
     fun findApplyListByUserId(UserId: Long): List<SosUserApplyDetail> {
         return jpaQueryFactory.selectFrom(sosUserApply)
             .innerJoin(sos).on(sos.id.eq(sosUserApply.sosId))
@@ -99,7 +117,8 @@ class SosQueryDslRepository(
                     sosUserApply.status,
                 )
             )
-            .where(sosUserApply.userId.eq(UserId))
+            .where(sosUserApply.userId.eq(UserId).and(sosUserApply.status.ne(SosUserApplyStatus.CANCEL)))
+            .orderBy(sos.id.desc())
             .fetch()
     }
 

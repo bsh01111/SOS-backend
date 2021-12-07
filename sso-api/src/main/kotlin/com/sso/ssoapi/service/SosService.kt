@@ -1,5 +1,6 @@
 package com.sso.ssoapi.service
 
+import com.sso.ssoapi.dto.ApplyDetail
 import com.sso.ssoapi.dto.MySosDetail
 import com.sso.ssoapi.dto.SosDetail
 import com.sso.ssoapi.dto.SosUserApplyDetail
@@ -25,6 +26,11 @@ class SosService(
     @Transactional(readOnly = true)
     fun findSosDetail(sosId: Long): SosDetail? {
         return sosQueryDslRepository.findSosDetail(sosId)
+    }
+
+    @Transactional(readOnly = true)
+    fun findApplyListBySosId(sosId: Long): List<ApplyDetail> {
+        return sosQueryDslRepository.findApplyListBySosId(sosId)
     }
 
     @Transactional(readOnly = true)

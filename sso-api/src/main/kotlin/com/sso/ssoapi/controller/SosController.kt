@@ -1,10 +1,12 @@
 package com.sso.ssoapi.controller
 
+import com.sso.ssoapi.controller.dto.sos.ApplyListResponse
 import com.sso.ssoapi.controller.dto.sos.InsertSosUserApplyRequest
 import com.sso.ssoapi.controller.dto.sos.MySosListResponse
 import com.sso.ssoapi.controller.dto.sos.SosDetailResponse
 import com.sso.ssoapi.controller.dto.sos.SosListResponse
 import com.sso.ssoapi.controller.dto.sos.SosUserApplyListResponse
+import com.sso.ssoapi.controller.dto.user.UserListResponse
 import com.sso.ssoapi.dto.ApiResponse
 import com.sso.ssoapi.service.SosService
 import org.springframework.web.bind.annotation.GetMapping
@@ -31,6 +33,12 @@ class SosController(
     fun findSosListByUserId(@PathVariable id: Long): ApiResponse {
         val sosList = sosService.findSosListByUserId(id)
         return ApiResponse(MySosListResponse(sosList))
+    }
+
+    @GetMapping("/myHelp")
+    fun findApplyListBySosId(@RequestParam sosId: Long): ApiResponse {
+        val applyList = sosService.findApplyListBySosId(sosId)
+        return ApiResponse(ApplyListResponse(applyList))
     }
 
     @GetMapping("/myApply/{id}")
