@@ -1,6 +1,8 @@
 package com.sso.ssoapi.service
 
+import com.sso.ssoapi.dto.MySosDetail
 import com.sso.ssoapi.dto.SosDetail
+import com.sso.ssoapi.dto.SosUserApplyDetail
 import com.sso.ssoapi.entity.SosUserApply
 import com.sso.ssoapi.entity.SosUserApplyStatus
 import com.sso.ssoapi.repository.SosQueryDslRepository
@@ -23,6 +25,21 @@ class SosService(
     @Transactional(readOnly = true)
     fun findSosDetail(sosId: Long): SosDetail? {
         return sosQueryDslRepository.findSosDetail(sosId)
+    }
+
+    @Transactional(readOnly = true)
+    fun findApplyListByUserId(id: Long): List<SosUserApplyDetail> {
+        return sosQueryDslRepository.findApplyListByUserId(id)
+    }
+
+    @Transactional(readOnly = true)
+    fun findSosListByUserId(id: Long): List<MySosDetail> {
+        return sosQueryDslRepository.findSosListByUserId(id)
+    }
+
+    @Transactional
+    fun cancelSosUserApply(sosId: Long, userId: Long) {
+        sosQueryDslRepository.cancelSosUserApply(sosId, userId)
     }
 
     @Transactional

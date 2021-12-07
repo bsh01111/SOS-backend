@@ -35,13 +35,13 @@ class ProfileController(
 
     @PostMapping("/post")
     fun enrollPost(@RequestBody body: PostEnrollRequest): ApiResponse {
-        val post = profileService.enrollPost(body);
-        return ApiResponse(PostEnrollResponse(post));
+        val post = profileService.enrollPost(body)
+        return ApiResponse(PostEnrollResponse(post))
     }
 
     @PutMapping("/{id}")
     fun updateProfile(@RequestBody body: ProfileUpdateRequest, @PathVariable id: Long): ApiResponse {
-        val result = profileService.updateProfile(body, id);
-        return ApiResponse(ProfileUpdateResponse(result));
+        val result = profileService.updateProfile(body, id)
+        return ApiResponse(ProfileUpdateResponse(result))
     }
 }
