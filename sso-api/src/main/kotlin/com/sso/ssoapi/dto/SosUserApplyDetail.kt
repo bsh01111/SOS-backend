@@ -7,7 +7,7 @@ data class SosUserApplyDetail @QueryProjection constructor(
     val sosId: Long,
     val userId: Long,
     val userNickname: String,
-    val mainProfileUrl: String,
+    val mainProfileUrl: String?,
     val content: String,
     val location: String,
     val cost: Long,

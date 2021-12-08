@@ -7,6 +7,7 @@ import com.sso.ssoapi.dto.SosUserApplyDetail
 import com.sso.ssoapi.entity.SosUserApply
 import com.sso.ssoapi.entity.SosUserApplyStatus
 import com.sso.ssoapi.repository.SosQueryDslRepository
+import com.sso.ssoapi.repository.SosUserApplyQueryDslRepository
 import com.sso.ssoapi.repository.SosUserApplyRepository
 import org.springframework.http.HttpStatus
 import org.springframework.stereotype.Service
@@ -15,6 +16,7 @@ import org.springframework.web.server.ResponseStatusException
 
 @Service
 class SosService(
+    private val sosUserApplyQueryDslRepository: SosUserApplyQueryDslRepository,
     private val sosQueryDslRepository: SosQueryDslRepository,
     private val sosUserApplyRepository: SosUserApplyRepository
 ) {
@@ -29,11 +31,6 @@ class SosService(
     }
 
     @Transactional(readOnly = true)
-    fun findApplyListBySosId(sosId: Long): List<ApplyDetail> {
-        return sosQueryDslRepository.findApplyListBySosId(sosId)
-    }
-
-    @Transactional(readOnly = true)
     fun findApplyListByUserId(id: Long): List<SosUserApplyDetail> {
         return sosQueryDslRepository.findApplyListByUserId(id)
     }
@@ -41,6 +38,21 @@ class SosService(
     @Transactional(readOnly = true)
     fun findSosListByUserId(id: Long): List<MySosDetail> {
         return sosQueryDslRepository.findSosListByUserId(id)
+    }
+
+    @Transactional(readOnly = true)
+    fun findUserApplyListBySosId(id: Long): List<ApplyDetail> {
+        return sosUserApplyQueryDslRepository.findUserApplyListBySosId(id)
+    }
+
+    @Transactional
+    fun acceptSos(sosId: Long, userId: Long) {
+        sosQueryDslRepository.acceptSos(sosId, userId)
+    }
+
+    @Transactional
+    fun refuseSos(sosId: Long, userId: Long) {
+        sosQueryDslRepository.refuseSos(sosId, userId)
     }
 
     @Transactional

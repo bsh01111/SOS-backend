@@ -1,8 +1,6 @@
 package com.sso.ssoapi.repository
 
 import com.querydsl.jpa.impl.JPAQueryFactory
-import com.sso.ssoapi.dto.QApplyDetail
-import com.sso.ssoapi.dto.ApplyDetail
 import com.sso.ssoapi.dto.QSosDetail
 import com.sso.ssoapi.dto.SosDetail
 import com.sso.ssoapi.dto.QSosUserApplyDetail
@@ -44,21 +42,15 @@ class SosQueryDslRepository(
     fun findSosListByUserId(UserId: Long): List<MySosDetail> {
         return jpaQueryFactory.selectFrom(sosUserApply)
             .innerJoin(sos).on(sos.id.eq(sosUserApply.sosId))
-            .innerJoin(user).on(user.id.eq(sos.userId))
-            .innerJoin(profile).on(sos.userId.eq(profile.userId))
             .select(
                 QMySosDetail(
                     sos.id,
-                    profile.url,
                     sos.content,
                     sos.location,
                     sos.cost,
-                    sos.mediaUrl,
-                    sos.userId,
-                    user.nickname,
-                    sosUserApply.status,
                 )
             )
+            .distinct()
             .where(sos.userId.eq(UserId))
             .orderBy(sos.id.desc())
             .fetch()
@@ -84,22 +76,6 @@ class SosQueryDslRepository(
             .fetchFirst()
     }
 
-    fun findApplyListBySosId(SosId: Long): List<ApplyDetail> {
-        return jpaQueryFactory.selectFrom(user)
-            .innerJoin(sosUserApply).on(sosUserApply.userId.eq(user.id))
-            .leftJoin(profile).on(profile.userId.eq(sosUserApply.userId).and(profile.category.eq(Category.PROFILE)))
-            .select(
-                QApplyDetail(
-                    user.id,
-                    user.nickname,
-                    profile.url,
-                    sosUserApply.status,
-                )
-            )
-            .where(sosUserApply.sosId.eq(SosId))
-            .fetch()
-    }
-
     fun findApplyListByUserId(UserId: Long): List<SosUserApplyDetail> {
         return jpaQueryFactory.selectFrom(sosUserApply)
             .innerJoin(sos).on(sos.id.eq(sosUserApply.sosId))
@@ -120,6 +96,20 @@ class SosQueryDslRepository(
             .where(sosUserApply.userId.eq(UserId).and(sosUserApply.status.ne(SosUserApplyStatus.CANCEL)))
             .orderBy(sos.id.desc())
             .fetch()
+    }
+
+    fun acceptSos(sosId: Long, userId: Long) {
+        jpaQueryFactory.update(sosUserApply)
+            .set(sosUserApply.status, SosUserApplyStatus.ACCEPT)
+            .where(sosUserApply.sosId.eq(sosId).and(sosUserApply.userId.eq(userId)))
+            .execute()
+    }
+
+    fun refuseSos(sosId: Long, userId: Long) {
+        jpaQueryFactory.update(sosUserApply)
+            .set(sosUserApply.status, SosUserApplyStatus.REFUSE)
+            .where(sosUserApply.sosId.eq(sosId).and(sosUserApply.userId.eq(userId)))
+            .execute()
     }
 
     fun cancelSosUserApply(sosId: Long, userId: Long) {

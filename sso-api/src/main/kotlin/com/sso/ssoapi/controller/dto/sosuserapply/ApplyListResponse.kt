@@ -1,4 +1,4 @@
-package com.sso.ssoapi.controller.dto.sos
+package com.sso.ssoapi.controller.dto.sosuserapply
 
 import com.sso.ssoapi.dto.ApplyDetail
 

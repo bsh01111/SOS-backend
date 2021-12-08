@@ -6,6 +6,6 @@ import com.sso.ssoapi.entity.SosUserApplyStatus
 data class ApplyDetail @QueryProjection constructor(
     val id: Long,
     val nickname: String,
-    val mainProfileUrl: String,
+    val mainProfileUrl: String?,
     val status: SosUserApplyStatus,
 )

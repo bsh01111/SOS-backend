@@ -1,12 +1,11 @@
 package com.sso.ssoapi.controller
 
-import com.sso.ssoapi.controller.dto.sos.ApplyListResponse
 import com.sso.ssoapi.controller.dto.sos.InsertSosUserApplyRequest
 import com.sso.ssoapi.controller.dto.sos.MySosListResponse
 import com.sso.ssoapi.controller.dto.sos.SosDetailResponse
 import com.sso.ssoapi.controller.dto.sos.SosListResponse
 import com.sso.ssoapi.controller.dto.sos.SosUserApplyListResponse
-import com.sso.ssoapi.controller.dto.user.UserListResponse
+import com.sso.ssoapi.controller.dto.sosuserapply.ApplyListResponse
 import com.sso.ssoapi.dto.ApiResponse
 import com.sso.ssoapi.service.SosService
 import org.springframework.web.bind.annotation.GetMapping
@@ -35,9 +34,9 @@ class SosController(
         return ApiResponse(MySosListResponse(sosList))
     }
 
-    @GetMapping("/myHelp")
-    fun findApplyListBySosId(@RequestParam sosId: Long): ApiResponse {
-        val applyList = sosService.findApplyListBySosId(sosId)
+    @GetMapping("/userApply/{id}")
+    fun findUserApplyListBySosId(@PathVariable id: Long): ApiResponse {
+        val applyList = sosService.findUserApplyListBySosId(id)
         return ApiResponse(ApplyListResponse(applyList))
     }
 
@@ -58,7 +57,17 @@ class SosController(
         sosService.insertUserSosApply(body.userId, body.sosId)
     }
 
-    @PutMapping("/myApply")
+    @PutMapping("/userApply/accept")
+    fun acceptSos(@RequestParam sosId: Long, @RequestParam userId: Long) {
+        sosService.acceptSos(sosId, userId)
+    }
+
+    @PutMapping("/userApply/refuse")
+    fun refuseSos(@RequestParam sosId: Long, @RequestParam userId: Long) {
+        sosService.refuseSos(sosId, userId)
+    }
+
+    @PutMapping("/userApply/cancel")
     fun cancelSosUserApply(@RequestParam sosId: Long, @RequestParam userId: Long) {
         sosService.cancelSosUserApply(sosId, userId)
     }
