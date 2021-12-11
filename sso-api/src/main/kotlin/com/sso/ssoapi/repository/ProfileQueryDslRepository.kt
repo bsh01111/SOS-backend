@@ -16,17 +16,17 @@ class ProfileQueryDslRepository(
     val jpaQueryFactory: JPAQueryFactory
 ) {
     fun findProfileDetail(UserId: Long): ProfileDetail? {
-        return jpaQueryFactory.selectFrom(profile)
-            .innerJoin(user).on(user.id.eq(profile.userId))
+        return jpaQueryFactory.selectFrom(user)
+            .leftJoin(profile).on(profile.userId.eq(user.id))
             .select(
                 QProfileDetail(
                     profile.id,
-                    profile.userId,
+                    user.id,
                     user.nickname,
                     profile.url,
                 )
             )
-            .where(profile.userId.eq(UserId))
+            .where(user.id.eq(UserId))
             .fetchFirst()
     }
 
