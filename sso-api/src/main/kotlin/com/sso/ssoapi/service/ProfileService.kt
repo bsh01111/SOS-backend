@@ -37,7 +37,7 @@ class ProfileService (
     }
 
     @Transactional
-    fun updateProfile(profileUpdateRequest: ProfileUpdateRequest, id: Long): Long? {
-        return profileQueryDslRepository.updateProfile(profileUpdateRequest, id)
+    fun updateProfile(profileUpdateRequest: ProfileUpdateRequest, id: Long) {
+        profileQueryDslRepository.updateProfile(profileUpdateRequest, id)
     }
 }

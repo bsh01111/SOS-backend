@@ -7,7 +7,6 @@ import com.sso.ssoapi.controller.dto.profile.PostListResponse
 import com.sso.ssoapi.controller.dto.profile.PostEnrollRequest
 import com.sso.ssoapi.controller.dto.profile.PostEnrollResponse
 import com.sso.ssoapi.controller.dto.profile.ProfileUpdateRequest
-import com.sso.ssoapi.controller.dto.profile.ProfileUpdateResponse
 import org.springframework.web.bind.annotation.GetMapping
 import org.springframework.web.bind.annotation.PutMapping
 import org.springframework.web.bind.annotation.PostMapping
@@ -40,8 +39,7 @@ class ProfileController(
     }
 
     @PutMapping("/{id}")
-    fun updateProfile(@RequestBody body: ProfileUpdateRequest, @PathVariable id: Long): ApiResponse {
-        val result = profileService.updateProfile(body, id)
-        return ApiResponse(ProfileUpdateResponse(result))
+    fun updateProfile(@RequestBody body: ProfileUpdateRequest, @PathVariable id: Long) {
+        profileService.updateProfile(body, id)
     }
 }

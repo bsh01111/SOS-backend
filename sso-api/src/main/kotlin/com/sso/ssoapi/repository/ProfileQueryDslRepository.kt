@@ -44,8 +44,8 @@ class ProfileQueryDslRepository(
             .fetch()
     }
 
-    fun updateProfile(profileUpdateRequest: ProfileUpdateRequest, UserId: Long): Long? {
-        return jpaQueryFactory.update(profile)
+    fun updateProfile(profileUpdateRequest: ProfileUpdateRequest, UserId: Long) {
+        jpaQueryFactory.update(profile)
                 .set(profile.career, profileUpdateRequest.career)
                 .set(profile.elementrySchool, profileUpdateRequest.elementrySchool)
                 .set(profile.middleSchool, profileUpdateRequest.middleSchool)
